@@ -1,0 +1,15 @@
+name: Build and Test Docker image
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build . -t openproject_export:test
+      - name: Test Docker image
+        run: docker run --rm openproject_export:test git --version
