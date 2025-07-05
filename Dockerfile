@@ -6,6 +6,7 @@ FROM openproject/openproject:16 AS plugin
 # COPY /path/to/my/local/openproject-slack /app/vendor/plugins/openproject-slack
 
 COPY Gemfile.plugins /app/
+COPY openproject-export /app/plugins/openproject-export
 
 # If the plugin uses any external NPM dependencies you have to install them here.
 # RUN npm add npm <package-name>*
