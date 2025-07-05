@@ -1,3 +1,3 @@
-# OpenProject Export
+# OpenProject Plugin Skeleton
 
-This repository contains the OpenProject export plugin skeleton as a starting point for plugin development.
+This repository provides a minimal OpenProject plugin skeleton. Use the `openproject-plugin-skeleton` directory as a starting point when creating a new plugin.
