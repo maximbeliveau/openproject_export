@@ -24,3 +24,4 @@ COPY --chown=$APP_USER:$APP_USER --from=plugin /usr/local/bundle /usr/local/bund
 COPY --chown=$APP_USER:$APP_USER --from=plugin /app/public/assets /app/public/assets
 COPY --chown=$APP_USER:$APP_USER --from=plugin /app/config/frontend_assets.manifest.json /app/config/frontend_assets.manifest.json
 COPY --chown=$APP_USER:$APP_USER --from=plugin /app/Gemfile.* /app/
+COPY --chown=$APP_USER:$APP_USER --from=plugin /app/vendor/plugins /app/vendor/plugins
