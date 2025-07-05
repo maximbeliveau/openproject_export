@@ -6,7 +6,7 @@ FROM openproject/openproject:16 AS plugin
 # COPY /path/to/my/local/openproject-slack /app/vendor/plugins/openproject-slack
 
 COPY Gemfile.plugins /app/
-COPY /openproject-export /app/vendor/plugins/openproject-export
+COPY ./openproject-export /app/vendor/plugins/openproject-export
 
 # If the plugin uses any external NPM dependencies you have to install them here.
 # RUN npm add npm <package-name>*
@@ -24,3 +24,4 @@ COPY --chown=$APP_USER:$APP_USER --from=plugin /usr/local/bundle /usr/local/bund
 COPY --chown=$APP_USER:$APP_USER --from=plugin /app/public/assets /app/public/assets
 COPY --chown=$APP_USER:$APP_USER --from=plugin /app/config/frontend_assets.manifest.json /app/config/frontend_assets.manifest.json
 COPY --chown=$APP_USER:$APP_USER --from=plugin /app/Gemfile.* /app/
+COPY --chown=$APP_USER:$APP_USER --from=plugin /app/vendor/plugins /app/vendor/plugins
