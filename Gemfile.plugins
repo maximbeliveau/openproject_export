@@ -1,3 +1,3 @@
 group :opf_plugins do
-  gem 'openproject-export', path: '/app/vendor/plugins/openproject-export'
+  gem 'openproject-plugin-skeleton', path: '/app/vendor/plugins/openproject-plugin-skeleton'
 end
