@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    openproject-plugin-skeleton (7.1.0)
+    openproject-export (7.1.0)
       rails (>= 8.0.1)
 
 GEM
@@ -211,7 +211,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  openproject-plugin-skeleton!
+  openproject-export!
 
 BUNDLED WITH
    2.6.7
