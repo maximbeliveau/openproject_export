@@ -16,4 +16,5 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + %w(CHANGELOG.md README.md)
 
   s.add_dependency "rails", '~> 7.0'
+  s.add_dependency "rubyzip", '~> 2.3'
 end
