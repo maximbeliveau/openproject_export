@@ -6,7 +6,7 @@ FROM openproject/openproject:16 AS plugin
 # COPY /path/to/my/local/openproject-slack /app/vendor/plugins/openproject-slack
 
 COPY Gemfile.plugins /app/
-COPY openproject-export/ /app/vendor/plugins/openproject-export/
+COPY /openproject-export/ /app/plugins/openproject-export/
 
 # If the plugin uses any external NPM dependencies you have to install them here.
 # RUN npm add npm <package-name>*
@@ -16,7 +16,7 @@ RUN bundle install
 RUN bundle config set deployment 'true'
 RUN ./docker/prod/setup/precompile-assets.sh
 
-FROM openproject/openproject:16-slim
+FROM openproject/openproject:16.1.1-slim
 
 COPY --from=plugin /usr/bin/git /usr/bin/git
 COPY --chown=$APP_USER:$APP_USER --from=plugin /app/vendor/bundle /app/vendor/bundle
