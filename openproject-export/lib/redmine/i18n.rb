@@ -7,7 +7,6 @@ module Redmine
     def current_language
       :en
     end
-
     def self.included(base)
       base.extend self
     end
