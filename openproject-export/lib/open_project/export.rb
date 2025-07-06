@@ -1,6 +1,10 @@
 module OpenProject
   module Export
     require "open_project/export/engine"
-    require "open_project/export/hooks"
+    begin
+      require "open_project/export/hooks"
+    rescue LoadError => e
+      warn "OpenProject::Export::Hooks could not be loaded: #{e.class} #{e.message}"
+    end
   end
 end
