@@ -13,12 +13,9 @@ module OpenProject
                requires_openproject: '>= 13.1.0'
 
       config.to_prepare do
-        begin
-          ::OpenProject::Export::Hooks
-        rescue NameError
-          # Hooks not loaded (missing OpenProject core)
-        end
+        require_dependency 'open_project/export/hooks'
       end
+
     end
   end
 end
