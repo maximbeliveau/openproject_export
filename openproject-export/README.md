@@ -1,6 +1,5 @@
 # OpenProject Export Plugin
 This plugin adds a "Backup Project" button to the project settings sidebar. The button allows creating a zipped backup of the project.
-
 ## Usage
 Add the plugin to `Gemfile.plugins` of your OpenProject installation:
 ```ruby

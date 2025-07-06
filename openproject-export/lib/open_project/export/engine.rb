@@ -12,7 +12,7 @@ module OpenProject
                author_url: 'https://openproject.org',
                requires_openproject: '>= 13.1.0'
 
-      initializer 'openproject-export.register_hooks' do
+      config.to_prepare do
         begin
           ::OpenProject::Export::Hooks
         rescue NameError
