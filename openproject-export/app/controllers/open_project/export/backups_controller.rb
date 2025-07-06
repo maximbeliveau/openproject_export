@@ -2,13 +2,13 @@ require 'zip'
 
 module OpenProject
   module Export
-    class AttachmentsController < ::ApplicationController
+    class BackupsController < ::ApplicationController
       before_action :find_project, :authorize
 
-      def download_all
-        send_data zipped_attachments,
+      def download
+        send_data zipped_project,
                   type: 'application/zip',
-                  filename: "#{@project.identifier}-attachments.zip"
+                  filename: "#{@project.identifier}-backup.zip"
       end
 
       private
@@ -17,7 +17,7 @@ module OpenProject
         @project = Project.find(params[:project_id])
       end
 
-      def zipped_attachments
+      def zipped_project
         buffer = Zip::OutputStream.write_buffer do |zip|
           @project.attachments.each do |attachment|
             next unless attachment.file.present?
@@ -31,3 +31,4 @@ module OpenProject
     end
   end
 end
+
