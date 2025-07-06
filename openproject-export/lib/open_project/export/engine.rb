@@ -12,13 +12,10 @@ module OpenProject
                author_url: 'https://openproject.org',
                requires_openproject: '>= 13.1.0'
 
-      initializer 'openproject-export.register_hooks' do
-        begin
-          ::OpenProject::Export::Hooks
-        rescue NameError
-          # Hooks not loaded (missing OpenProject core)
-        end
+      config.to_prepare do
+        require_dependency 'open_project/export/hooks'
       end
+
     end
   end
 end
