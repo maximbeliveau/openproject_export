@@ -17,3 +17,5 @@ See doc/COPYRIGHT.md for more details.
 # Changelog
 
 * `#<ticket number>` Create plugin
+* 7.1.1 Added project backup feature with a settings menu entry
+
