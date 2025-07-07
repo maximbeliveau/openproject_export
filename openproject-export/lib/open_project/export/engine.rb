@@ -28,7 +28,6 @@ module OpenProject
       end
 
       # no additional hooks needed
-
     end
   end
 end
