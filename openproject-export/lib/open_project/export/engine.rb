@@ -10,15 +10,25 @@ module OpenProject
 
       register 'openproject-export',
                author_url: 'https://openproject.org',
-               requires_openproject: '>= 13.1.0'
-
-      initializer 'openproject-export.register_hooks' do
-        begin
-          ::OpenProject::Export::Hooks
-        rescue NameError
-          # Hooks not loaded (missing OpenProject core)
+               requires_openproject: '>= 13.1.0' do
+        project_module :export_backups do
+          permission :download_project_backup,
+                     { 'open_project/export/backups' => [:download] },
+                     permissible_on: [:project]
         end
+
+        menu :project_menu,
+             :backup_project,
+             { controller: '/open_project/export/backups',
+               action: :download },
+             caption: :backup_project_name,
+             parent: :settings,
+             param: :project_id,
+             if: ->(project) { project.module_enabled?(:export_backups) }
       end
+
+      # no additional hooks needed
+
     end
   end
 end
