@@ -21,7 +21,6 @@ module OpenProject
       config.to_prepare do
         require_dependency 'open_project/export/hooks'
       end
-
     end
   end
 end

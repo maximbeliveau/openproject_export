@@ -6,3 +6,4 @@ module OpenProject
     end
   end
 end
+

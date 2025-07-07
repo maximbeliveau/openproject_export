@@ -12,6 +12,7 @@ group :opf_plugins do
 end
 ```
 
+
 Run `./bin/setup_dev` inside your OpenProject installation to install dependencies and migrate the database.
 
 After starting the application, enable the **Export Backups** module under *Project settings → Modules* so the *Backup Project* button appears in the sidebar.
