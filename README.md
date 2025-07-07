@@ -12,6 +12,11 @@ group :opf_plugins do
 end
 ```
 
-Run `./bin/setup_dev` inside your OpenProject installation to install dependencies and migrate the database. You can then start the application and access the backup option from a project's *Settings* sidebar.
+
+Run `./bin/setup_dev` inside your OpenProject installation to install dependencies and migrate the database.
+
+After starting the application, enable the **Export Backups** module under *Project settings → Modules* so the *Backup Project* button appears in the sidebar.
+
+You can then access the backup option from a project's *Settings* sidebar.
 
 Run `bundle exec rake spec` from this repository root to execute the plugin's (empty) test suite.

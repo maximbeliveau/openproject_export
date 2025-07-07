@@ -2,6 +2,8 @@
 
 This plugin adds a **Backup Project** entry to the project settings sidebar. Selecting it downloads a zipped archive containing the project's attachments.
 
+
+This plugin adds a **Backup Project** entry to the project settings sidebar. Selecting it downloads a zipped archive containing the project's attachments.
 ## Usage
 Add the plugin to `Gemfile.plugins` of your OpenProject installation:
 ```ruby
@@ -10,7 +12,8 @@ group :opf_plugins do
 end
 ```
 
-After adding it, run `./bin/setup_dev` from your OpenProject core directory and start the server as usual.
+
+After adding it, run `./bin/setup_dev` from your OpenProject core directory and start the server as usual. Enable the **Export Backups** module in a project to show the button in its settings sidebar.
 
 
 Run `bundle exec rake spec` from this directory or the repository root to execute the plugin's test suite.
