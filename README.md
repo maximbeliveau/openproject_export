@@ -1,7 +1,3 @@
-# OpenProject Export Plugin
-
-This repository contains the `openproject-export` plugin. It adds a **Backup Project** entry in the project settings sidebar so administrators can download a zipped backup of all project attachments.
-
 ## Usage
 
 Include the plugin in your `Gemfile.plugins`:
