@@ -27,10 +27,6 @@ module OpenProject
              parent: :settings,
              icon: 'download'
       end
-      config.to_prepare do
-        require_dependency 'open_project/export/backups_controller'
-      end
-
     end
   end
 end
