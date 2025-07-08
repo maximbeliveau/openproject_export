@@ -1,4 +1,3 @@
-require 'zip'
 
 module OpenProject
   module Export
@@ -18,6 +17,7 @@ module OpenProject
       end
 
       def zipped_project
+        require 'zip'
         buffer = Zip::OutputStream.write_buffer do |zip|
           @project.attachments.each do |attachment|
             next unless attachment.file.present?
