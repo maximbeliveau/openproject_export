@@ -16,7 +16,6 @@ module OpenProject
                      { 'open_project/export/backups' => [:download] },
                      permissible_on: [:project]
         end
-
         menu :project_menu,
              :backup_project,
              { controller: '/open_project/export/backups', action: :download },
@@ -27,6 +26,9 @@ module OpenProject
              caption: :backup_project_name,
              parent: :settings,
              icon: 'download'
+      end
+      config.to_prepare do
+        require_dependency 'open_project/export/backups_controller'
       end
 
     end
